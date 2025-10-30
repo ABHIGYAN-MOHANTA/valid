@@ -8,15 +8,15 @@ import { Header } from "@/components/header"
 export default function Home() {
   const [results, setResults] = useState(null)
   const [loading, setLoading] = useState(false)
-  const resultsRef = useRef(null)
+  const resultsRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (results && resultsRef.current) {
-      resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
+    if (results) {
+      resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
     }
   }, [results])
 
-  const handleSubmit = async (formData) => {
+  const handleSubmit = async (formData: any) => {
     setLoading(true)
     try {
       const response = await fetch("/api/validate", {

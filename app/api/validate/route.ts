@@ -36,14 +36,47 @@ Assessment Breakdown:
 
 Overall Score: ${totalScore}/80 (${zone})
 
-Provide a strategic analysis covering:
-1. Overall viability assessment and what this score means for your concept
-2. Your strongest competitive advantages based on these scores
-3. Critical vulnerabilities that could derail this idea
-4. Concrete validation experiments to run in the next 30 days
-5. Which go-to-market approach fits best: Niche Focus, Platform Integration, Audience Leverage, or Direct Competition
+Return STRICTLY in the following Markdown structure so a UI parser can segment content reliably:
 
-Be direct and practical. Focus on what matters most for success.`
+## 1. Overall Viability Assessment
+Key takeaway: <one-sentence key takeaway>
+<1-3 short paragraphs>
+
+## 2. Strongest Competitive Advantages
+- <bullet 1>
+- <bullet 2>
+- <bullet 3>
+
+## 3. Critical Vulnerabilities
+- <risk 1>
+- <risk 2>
+- <risk 3>
+
+## 4. Concrete Validation Experiments (Next 30 Days)
+**Experiment 1:** <title>
+- Goal: <goal>
+- Approach: <approach>
+- Metrics: <metrics>
+
+**Experiment 2:** <title>
+- Goal: <goal>
+- Approach: <approach>
+- Metrics: <metrics>
+
+## 5. Go-To-Market Approach
+Recommended: <Niche Focus | Platform Integration | Audience Leverage | Direct Competition>
+Rationale: <2-4 bullets>
+
+## Final Advice
+<2-4 short sentences>
+
+Rules:
+- Use exactly the headings above.
+- Keep "Key takeaway:" on its own line.
+- Prefix experiments with "**Experiment N:**" exactly.
+- Use hyphen bullets ("- ") for lists.
+- No tables or code blocks.
+- Be direct and practical. Focus on what matters most for success.`
 
     const result = await model.generateContent(prompt)
     const insights = result.response.text()

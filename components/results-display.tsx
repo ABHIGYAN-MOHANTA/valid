@@ -3,11 +3,21 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ScoreGauge } from "./score-gauge"
+import { AiAnalysis } from "./ai-analysis"
 
-export function ResultsDisplay({ results, onReset }) {
+type SectionScore = { score: number; max: number }
+type ScoresRecord = Record<string, SectionScore>
+type Results = {
+  scores: ScoresRecord
+  totalScore: number
+  zone: string
+  insights: string
+}
+
+export function ResultsDisplay({ results, onReset }: { results: Results; onReset: () => void }) {
   const { scores, totalScore, zone, insights } = results
 
-  const getZoneColor = (zone) => {
+  const getZoneColor = (zone: string) => {
     switch (zone) {
       case "Launch Ready":
         return "text-green-600 dark:text-green-400"
@@ -22,7 +32,7 @@ export function ResultsDisplay({ results, onReset }) {
     }
   }
 
-  const getZoneBg = (zone) => {
+  const getZoneBg = (zone: string) => {
     switch (zone) {
       case "Launch Ready":
         return "bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800"
@@ -85,9 +95,7 @@ export function ResultsDisplay({ results, onReset }) {
       {/* AI Insights */}
       <Card className="p-8 border-border/50 bg-card/50 backdrop-blur">
         <h2 className="text-2xl font-semibold mb-6 text-foreground">AI Analysis</h2>
-        <div className="prose prose-sm dark:prose-invert max-w-none">
-          <div className="space-y-4 text-foreground leading-relaxed whitespace-pre-wrap">{insights}</div>
-        </div>
+        <AiAnalysis insights={insights} />
       </Card>
 
       {/* Action Button */}

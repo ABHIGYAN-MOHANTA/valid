@@ -9,8 +9,7 @@ const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Valid",
-  description: "Discover if your saas idea has real potential with intelligent analysis",
-    generator: 'v0.app'
+  description: "Validate your saas idea with intelligent analysis",
 }
 
 export default function RootLayout({

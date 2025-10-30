@@ -4,7 +4,7 @@ export function Header() {
       <div className="container mx-auto px-4 py-6 max-w-6xl">
         <div className="flex flex-col gap-2">
           <h1 className="text-4xl font-bold text-foreground">Valid</h1>
-          <p className="text-muted-foreground text-lg">Discover if your saas idea has real potential with intelligent analysis</p>
+          <p className="text-muted-foreground text-lg">Validate your saas idea with intelligent analysis</p>
         </div>
       </div>
     </header>
