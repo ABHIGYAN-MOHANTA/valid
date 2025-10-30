@@ -123,3 +123,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Ensure backgrounds/colors are preserved when printing to PDF */
+@media print {
+  html, body {
+    background: var(--background) !important;
+    color: var(--foreground) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Avoid page background being forced to white in some browsers */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Prevent cards/sections from breaking across pages */
+  .print-avoid-break {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

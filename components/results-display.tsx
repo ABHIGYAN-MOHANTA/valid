@@ -50,8 +50,8 @@ export function ResultsDisplay({ results, onReset }: { results: Results; onReset
   return (
     <div className="space-y-8">
       {/* Score Summary */}
-      <Card className="p-8 border-border/50 bg-card/50 backdrop-blur">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <Card className="p-8 border-border/50 bg-card/50 backdrop-blur print-avoid-break">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold mb-2 text-foreground">Your Valid Score</h2>
             <p className="text-muted-foreground mb-6">Comprehensive viability assessment across all dimensions</p>
@@ -70,7 +70,7 @@ export function ResultsDisplay({ results, onReset }: { results: Results; onReset
       {/* Section Scores */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {Object.entries(scores).map(([section, data]) => (
-          <Card key={section} className="p-6 border-border/50 bg-card/50 backdrop-blur">
+          <Card key={section} className="p-6 border-border/50 bg-card/50 backdrop-blur print-avoid-break">
             <h3 className="font-semibold text-foreground mb-3 capitalize">
               {section.replace(/([A-Z])/g, " $1").trim()}
             </h3>
@@ -93,14 +93,20 @@ export function ResultsDisplay({ results, onReset }: { results: Results; onReset
       </div>
 
       {/* AI Insights */}
-      <Card className="p-8 border-border/50 bg-card/50 backdrop-blur">
+      <Card className="p-8 border-border/50 bg-card/50 backdrop-blur print-avoid-break">
         <h2 className="text-2xl font-semibold mb-6 text-foreground">AI Analysis</h2>
         <AiAnalysis insights={insights} />
       </Card>
 
-      {/* Action Button */}
-      <div className="flex justify-center pt-4">
-        <Button onClick={onReset} variant="outline" className="px-8 py-6 text-lg font-semibold bg-transparent">
+      {/* Action Buttons */}
+      <div className="flex flex-col items-stretch gap-3 pt-4 print:hidden sm:flex-row sm:justify-center">
+        <Button
+          onClick={() => typeof window !== "undefined" && window.print()}
+          className="w-full sm:w-auto px-8 py-6 text-lg font-semibold"
+        >
+          Export as PDF
+        </Button>
+        <Button onClick={onReset} variant="outline" className="w-full sm:w-auto px-8 py-6 text-lg font-semibold bg-transparent">
           Evaluate Another Concept
         </Button>
       </div>
