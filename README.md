@@ -12,7 +12,7 @@
 
 ---
 
-<img width="1512" height="982" alt="Screenshot 2025-10-31 at 3 50 14 AM" src="https://github.com/user-attachments/assets/22890258-c5c7-489e-8145-c744008ff09e" />
+<img width="1202" height="825" alt="Screenshot 2025-10-31 at 3 52 24 AM" src="https://github.com/user-attachments/assets/2915dda6-9c36-4f2a-9d4c-9d0721c708b7" />
 
 
 ### Overview
