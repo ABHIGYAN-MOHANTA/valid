@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     // Generate AI insights using Gemini
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-001" })
 
-    const prompt = `You are a seasoned startup advisor evaluating a business concept. Analyze this IdeaScore assessment and provide strategic guidance.
+    const prompt = `You are a seasoned startup advisor evaluating a saas. Analyze this valid score assessment and provide strategic guidance.
 
 Concept: ${formData.ideaName}
 Description: ${formData.description}
