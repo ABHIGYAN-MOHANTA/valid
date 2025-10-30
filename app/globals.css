@@ -124,11 +124,19 @@
   }
 }
 
+/* Remove default browser print margins */
+@page {
+  margin: 0;
+  /* size: auto keeps current viewport size unless you set A4/Letter explicitly */
+  size: auto;
+}
+
 /* Ensure backgrounds/colors are preserved when printing to PDF */
 @media print {
   html, body {
     background: var(--background) !important;
     color: var(--foreground) !important;
+    margin: 0 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -143,5 +151,16 @@
   .print-avoid-break {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  /* Ensure toggle is visible during print */
+  .print-show {
+    display: inline-flex !important;
+    visibility: visible !important;
+  }
+
+  /* Hide the entire header (and its translucent background) in print */
+  header {
+    display: none !important;
   }
 }

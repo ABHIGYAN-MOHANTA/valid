@@ -51,7 +51,7 @@ export function ResultsDisplay({ results, onReset }: { results: Results; onReset
     <div className="space-y-8">
       {/* Score Summary */}
       <Card className="p-8 border-border/50 bg-card/50 backdrop-blur print-avoid-break">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-3xl font-bold mb-2 text-foreground">Your Valid Score</h2>
             <p className="text-muted-foreground mb-6">Comprehensive viability assessment across all dimensions</p>
