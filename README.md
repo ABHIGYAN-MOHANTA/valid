@@ -12,6 +12,9 @@
 
 ---
 
+<img width="1512" height="982" alt="Screenshot 2025-10-31 at 3 50 14 AM" src="https://github.com/user-attachments/assets/22890258-c5c7-489e-8145-c744008ff09e" />
+
+
 ### Overview
 
 Valid helps you quickly assess the viability of a SaaS concept. Provide key signals (problem, market, solution, founder fit), and the app:
